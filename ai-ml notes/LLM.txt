@@ -1,0 +1,131 @@
+LLMs (Large Language Models) are advanced AI systems trained to understand and generate human-like text.
+What does “Large Language Model” mean?
+	• Large → They’re trained on massive amounts of text data and have billions (sometimes trillions) of parameters.
+	• Language → They work with human language (reading, writing, summarizing, translating, coding, etc.).
+	• Model → They’re mathematical systems that learn patterns from data.
+
+Examples of LLMs
+    Some well-known LLMs include:
+	• GPT-4 by OpenAI
+	• Claude by Anthropic
+	• LLaMA by Meta
+	• Gemini by Google DeepMind
+
+LLMs are a type of deep learning model.
+    Here’s how it fits together:
+	• Artificial Intelligence (AI) → The big umbrella
+	• Machine Learning (ML) → AI systems that learn from data
+	• Deep Learning (DL) → A subset of ML using large neural networks
+	• LLMs → A specific kind of deep learning model designed for language
+
+Why LLMs Are Deep Learning
+-> LLMs use deep neural networks with many layers (often dozens to hundreds).
+
+Some Generative AI systems use LLMs.
+Generative AI
+   ├── LLMs (text generation)
+   ├── Image models
+   ├── Music models
+   └── Video models
+    • ChatGPT → uses an LLM → which is a type of Generative AI
+    • Image generator → uses diffusion model → also Generative AI, but not LLM
+
+How LLMs are built? 
+
+    1️⃣ Collect Massive Text Data
+    Training data may include:
+        • Books
+        • Websites
+        • Articles
+        • Code
+        • Conversations
+    The model learns language patterns from this large dataset.
+
+    2️⃣ Tokenization
+    Text is broken into smaller pieces called tokens.
+    Tokens are converted into numerical IDs so the neural network can process them.
+
+    3️⃣ Choose the Architecture
+    Almost all modern LLMs use the "Transformer architecture".
+    Transformer Architecture uses attention mechanism .
+    Attention allows the model to choose the correct meaning of a word by focusing on relevant surrounding words.
+
+    The key word in both sentences is “bank”, but it means different things:
+        1️⃣ “We had our tent near a river bank”
+        → Here, bank means the side of a river.
+        2️⃣ “I went to a bank to withdraw money”
+        → Here, bank means a financial institution.
+
+    4️⃣ Pretraining (Self-Supervised Learning)
+    This is the core step.
+    The model is trained to:
+        Predict the next token in a sentence.
+        
+    Here are steps it follows: 
+    First it is pre training , then mid training and then SFT .  
+    In pre training it learns general language patterns from massive text data. 
+    In mid training it specialize the model further before instruction tuning.
+
+    5️⃣ Fine-Tuning
+    After pretraining, the model is refined.
+    Common methods:
+        • Supervised fine-tuning (human-labeled examples)
+        • Reinforcement Learning from Human Feedback (RLHF)
+    For example, models like GPT-4 by OpenAI were improved using human feedback to make responses safer and more helpful.
+    In SFT it will  “Learn to follow instructions properly.”
+
+    In pre training it is just computing next token, but in SFT it will give answer to our questions. 
+    Preference fine tuning uses Reinforcement Learning from Human Feedback (RLHF). 
+
+    6️⃣ Alignment & Safety Training
+    Developers add:
+        • Safety filters
+        • Bias mitigation
+        • Content moderation tuning
+    This makes the model suitable for public use.
+
+    7️⃣ Deployment
+    Finally:
+        • The model is compressed/optimized
+        • Hosted on servers
+        • Exposed via API or apps
+    Users interact with it through interfaces like chat systems.
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+RLHF (Reinforcement Learning from Human Feedback) 
+
+The AI learns by humans telling it which answers are good and which are bad.
+
+🧠 Imagine Teaching a Child
+	1. The child gives an answer.
+	2. You say:
+		○ “Good job 👍”
+		○ or “No, that’s not right 👎”
+	3. The child slowly learns what kinds of answers you like.
+RLHF works the same way for AI.
+
+🔁 How It Works (Super Simple Version)
+Step 1: The AI learns language
+It reads tons of text from the internet to understand how language works.
+At this stage:
+	• It can talk
+	• But it might say weird, wrong, or unsafe things
+
+Step 2: Humans show better answers
+People write examples of good answers.
+The AI copies and learns from them.
+
+Step 3: Humans compare answers
+The AI gives two answers to the same question.
+Humans choose:
+	“Answer A is better than Answer B.”
+The AI learns what humans prefer.
+
+Step 4: The AI improves
+It starts giving more answers like the ones humans liked.
+Over time it becomes:
+	• More helpful
+	• More polite
+	• Safer
+	• Better at following instructions

@@ -1,0 +1,141 @@
+NLP (Natural Language Processing) is a field of AI focused on enabling computers to understand, interpret, 
+and generate human language (text or speech).
+
+📚 What Is NLP?
+Natural Language Processing (NLP) is the entire area of AI focused on working with human language.
+It includes tasks like:
+	• Translation
+	• Sentiment analysis
+	• Chatbots
+	• Speech recognition
+	• Named entity recognition
+It has existed for decades — even before deep learning.
+
+🤖 What Is an LLM?
+A Large Language Model (LLM) is a modern deep learning model trained on massive text data to understand and generate language.
+Most LLMs are based on the Transformer architecture, introduced by researchers at Google.
+Examples include:
+	• GPT-4
+	• Claude
+	• LLaMA
+
+🚀 How NLP Relates to LLMs
+Think of it like this:
+	• NLP → The whole research field
+	• LLMs → A powerful modern tool inside NLP
+
+--------------------------------------------------------------------------------------------------------------------
+
+✅ Traditional NLP – Neat Steps
+
+1️⃣ Data Collection
+Gather task-specific dataset
+(e.g., movie reviews for sentiment analysis)
+2️⃣ Text Preprocessing
+	• Lowercasing
+	• Remove punctuation
+	• Stopword removal
+	• Stemming / Lemmatization
+3️⃣ Tokenization
+Split text into words or phrases.
+4️⃣ Feature Extraction
+Convert text into numeric features:
+	• Bag of Words
+	• TF-IDF
+	• N-grams
+5️⃣ Model Training
+Train a machine learning model:
+	• Logistic Regression
+	• Naive Bayes
+	• SVM
+6️⃣ Prediction
+Model outputs:
+	• Class label
+	• Translation
+	• Extracted information
+
+---------------------------------------------------------------------------------------------------------------------
+
+✅ LLM (Large Language Model) – Neat Steps
+🔹 Training Phase
+1️⃣ Massive Data Collection
+Books, websites, articles, code, etc.
+2️⃣ Tokenization
+Split text into subword tokens.
+3️⃣ Pretraining
+Train Transformer model using:
+	• Next-token prediction
+	• Self-supervised learning
+4️⃣ (Optional) Mid-Training
+Domain-specific additional training.
+5️⃣ Supervised Fine-Tuning (SFT)
+Train on high-quality instruction–response pairs.
+6️⃣ Alignment (RLHF / DPO)
+
+🔹 Inference Phase (When User Asks a Question)
+7️⃣ Input Tokenization
+Convert user prompt into tokens.
+8️⃣ Transformer Processing
+Self-attention across many layers.
+9️⃣ Token Prediction
+Predict next token repeatedly.
+🔟 Output Generation
+Return full generated response.
+
+---------------------------------------------------------------------------------------------------------------------
+🔹 Traditional NLP (Old Approach)
+In classical NLP, we manually do heavy preprocessing like:
+    Lowercasing text
+    Removing punctuation
+    Removing stopwords (the, is, and)
+    Stemming / Lemmatization
+    Feature extraction (TF-IDF, Bag of Words)
+traditional NLP also does tokenization, usually after (or as part of) preprocessing.
+
+
+🔹 LLM Approach (Modern NLP)
+LLMs do not require heavy manual preprocessing. They mainly do:
+    Tokenization (convert text into tokens/subwords)
+    Convert tokens → numbers (token IDs)
+    That’s it.
+
+    They:
+        Keep punctuatio
+        Keep stopwords
+        Keep casing (sometimes)
+        Learn patterns automatically
+
+
+🔹 Why LLMs Don’t Need Heavy Preprocessing
+    Because:
+    They are very large (billions of parameters)
+    They are trained on huge datasets
+    They learn language structure automatically
+    Old NLP models were small, so we had to “help” them with manual cleaning.
+
+---------------------------------------------------------------------------------------------------------------------
+What Is SVM?
+SVM (Support Vector Machine) is a supervised machine learning algorithm used for:
+	• Classification
+	• Regression
+	• Outlier detection
+It is commonly used in traditional NLP systems (before deep learning became dominant).
+in traditional NLP, SVM was commonly used to train models.
+in LLMs, neural networks are used for training. 
+
+Example:
+If we want to classify emails as:
+	• Spam
+	• Not Spam
+SVM draws a line (in 2D) or a plane (in higher dimensions) that separates the two groups with the maximum margin.
+
+
+How it works?
+
+🔹 What SVM Actually Creates
+SVM creates:
+	A hyperplane that separates classes with maximum margin.
+	• In 2D → it’s a line
+	• In 3D → it’s a plane
+	• In higher dimensions → it’s a hyperplane
+It does not create a hemisphere.

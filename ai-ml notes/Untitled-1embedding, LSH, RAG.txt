@@ -1,0 +1,177 @@
+Word embedding 
+
+    A word embedding is just:
+    A way to turn words into numbers so computers can understand them.
+    Computers don’t understand words like humans do. They only understand numbers.
+
+🍎 When You Search “Apple” in Google…
+    How does Google know whether you mean:
+        • The fruit 🍏
+        • Or Apple Inc. (iPhone company)?
+    Yes — embeddings are a big part of how this works.
+
+🧠 Step 1: Google Does NOT See Words
+    When you type:
+        Apple
+    Google does NOT see the word like humans do.
+    It converts it into numbers (embedding vector).
+
+🔎 Step 2: Context Changes the Embedding
+    Now compare these searches:
+    🔹 Case A:
+        Apple revenue 2025
+    Now Google sees:
+        • Apple
+        • revenue
+    The word “revenue” pushes the embedding toward:
+        • business
+        • company
+        • stock
+        • finance
+    So the embedding becomes closer to:
+        • iPhone
+        • stock market
+        • CEO
+        • tech company
+    Result:
+    You get results about Apple Inc..
+
+    🔹 Case B:
+        Apple calories
+    Now “calories” pushes the embedding toward:
+        • food
+        • fruit
+        • nutrition
+    Now the embedding is closer to:
+        • banana
+        • orange
+        • fruit nutrition
+    Result:
+    You get fruit information.
+
+-------------------------------------------------------------------------------------------------------
+Locality Sensitive Hashing (LSH)
+
+🧠 First: The Problem
+When you search something:
+	1. Your query becomes an embedding vector
+	2. The system must compare it with millions or billions of stored embeddings
+	3. It needs to find the most similar ones
+    But comparing with every single vector is too slow.
+    So we need a shortcut.
+    That shortcut is Locality Sensitive Hashing (LSH).
+
+🎯 What Is Locality Sensitive Hashing?
+    LSH is a trick that helps us:
+        Quickly find similar vectors without checking all of them.
+        Normal hashing:
+            • Completely different inputs → completely different hash
+            • Similar inputs → still very different hash
+        But LSH is special:
+            Similar items → likely go into the same bucket.
+        That’s the key idea.
+
+📦 Simple Analogy
+    Imagine a huge library with 1 billion books.
+    Instead of:
+        • Checking every book one by one
+    You:
+        • Put similar books into the same room
+    So if you’re searching for “Apple revenue” (related to Apple Inc.),
+    you only go to the “Tech Company” room.
+    You don’t check the “Fruit Nutrition” room.
+    That saves time.
+
+🔎 How It Works (Conceptually)
+    Step 1: Convert everything into embeddings (vectors).
+    Step 2: Use LSH to assign vectors into buckets.
+    Step 3: When a new query comes:
+        • Convert it to a vector
+        • Find which bucket it belongs to
+        • Only search inside that bucket
+    Much faster than scanning everything.
+
+-------------------------------------------------------------------------------------------------------
+
+RAG (Retrieval augmented generation) 
+
+RAG is a method that helps AI give more accurate and up-to-date answers by allowing it to look up information before responding.
+Instead of only relying on what it learned during training, it can search your data first, then answer.
+
+🧠 The Problem RAG Solves
+    Normal LLM:
+        • Trained once
+        • Doesn’t know your company data
+        • Can hallucinate
+        • Doesn’t know recent updates
+    Example:
+    If you ask about your company’s HR policy, the model doesn’t know it.
+
+🚀 What RAG Does
+    RAG adds a retrieval step before generating an answer.
+    Think of it like:
+        Search first → Then answer
+
+🔁 How RAG Works (Step-by-Step)
+
+    1️⃣ Convert Documents to Embeddings
+    All your documents (PDFs, policies, manuals, etc.) are converted into embeddings (vectors) and stored in a vector database.
+
+    2️⃣ User Asks a Question
+    Example:
+        What is our leave policy?
+    The question is also converted into an embedding.
+    3️⃣ Retrieve Similar Documents
+    The system finds the most similar document chunks using vector similarity search.
+    4️⃣ Send Context to LLM
+    The retrieved documents + the question are sent to the model (like GPT-4).
+
+    5️⃣ Model Generates Final Answer
+    Now the answer is based on:
+        • The user question
+        • Your retrieved documents
+    So it becomes:
+        • More accurate
+        • Grounded in real data
+        • Less hallucinated
+
+------------------------------------------------------------------------------------------------------------------------
+
+Lang chain 
+
+LangChain is a python open source framework that helps you build applications using Large Language Models (LLMs).
+Think of it as:
+A toolkit that connects LLMs with your data, tools, and workflows.
+
+In simple terms, LangChain helps developers connect LLMs to real data, tools, and workflows so they can build smarter apps such as chatbots, AI assistants, document analyzers, and autonomous agents.
+
+🔹 What Problem Does LangChain Solve?
+    Large language models are powerful, but on their own they:
+        • Don’t remember past conversations well
+        • Don’t access external data automatically
+        • Can’t easily use tools (like databases or APIs)
+        • Struggle with multi-step reasoning tasks
+    LangChain provides the structure to solve these issues.
+
+🔹 First: What is an LLM?
+    An LLM (Large Language Model) like:
+        • GPT-4
+        • LLaMA
+    is already pre-trained on massive amounts of data.
+    Training happens before you ever use the model. It requires:
+        • Huge datasets
+        • Massive GPUs
+        • Specialized ML engineering
+    You typically don’t train these yourself.
+
+🔹 So What Does LangChain Do?
+    LangChain helps you:
+        • Connect LLMs to your app
+        • Connect them to databases
+        • Let them read PDFs
+        • Add memory to conversations
+        • Use tools (APIs, search, calculators)
+        • Build multi-step workflows
+    Think of it like this:
+        LLM = Brain
+    LangChain = Operating system that helps the brain work inside your app
