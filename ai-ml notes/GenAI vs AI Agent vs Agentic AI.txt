@@ -1,0 +1,58 @@
+1. Generative AI
+    Definition
+    Generative AI is a type of AI that creates new content (text, images, code, audio, etc.) based on the input it receives.
+    It responds to prompts but does not act on its own or pursue goals.
+    Key Characteristics
+        • Content generation
+        • Prompt → response
+        • No autonomy
+        • No decision-making or actions
+    Example
+    ChatGPT writing an email
+        Input: “Write a professional email requesting a meeting.”
+    ➡️ Output: A complete email draft
+    ➡️ Stops after generating the content
+
+
+2. AI Agents
+    Definition
+    An AI Agent is an AI system that can plan and take actions using tools to complete a specific task or goal.
+    It often uses Generative AI as its “brain” but adds decision-making and tool usage.
+    Key Characteristics
+        • Goal-oriented
+        • Can use tools (search, APIs, databases)
+        • Can perform multiple steps
+        • Limited autonomy
+    Example
+    AI agent booking a flight
+        Goal: “Book the cheapest flight from Delhi to London.”
+    The agent:
+        1. Searches flight websites
+        2. Compares prices
+        3. Selects best option
+        4. Books the ticket
+    ➡️ Takes actions, not just text generation
+
+
+3. Agentic AI
+    Definition
+    Agentic AI is an advanced AI system where one or more AI agents autonomously (independently) pursue goals over time, make decisions, adapt, and coordinate with minimal human input.
+    An AI system can work toward a goal on its own, without needing step-by-step instructions from a human, and can decide what to do next by itself until the goal is achieved.
+
+    It focuses on behavior and architecture, not just a single model.
+    Key Characteristics
+        • High autonomy
+        • Long-term memory
+        • Self-planning and adaptation
+        • Can work continuously
+        • May involve multiple agents
+    Example
+    Autonomous customer support system
+    An agentic AI system:
+        • Monitors incoming support tickets
+        • Resolves common issues automatically
+        • Escalates complex problems
+        • Learns from past cases
+        • Improves responses over time
+    ➡️ Works continuously without being prompted each time
+

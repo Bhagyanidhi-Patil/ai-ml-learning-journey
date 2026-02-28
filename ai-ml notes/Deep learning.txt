@@ -1,0 +1,262 @@
+Deep learning is a type of machine learning that uses neural networks to learn directly from raw data.
+Deep learning is powerful because it can learn from unstructured data (text, images, audio) without needing hand-crafted features.
+
+What makes deep learning special
+    Traditional ML usually can’t work well with raw data by itself.
+    It typically needs preprocessing and feature extraction first.
+
+    Traditional ML models (like linear regression, SVMs, decision trees):
+        • Expect structured, numeric inputs
+        • Don’t understand raw text, images, or audio directly
+        So humans have to step in.
+
+    Deep learning learns features + prediction together, end-to-end.
+        Instead of:
+        “Let’s decide what features matter, then train a model”
+        It does:
+        “Give me raw data, I’ll figure out what matters”
+        That’s the superpower.
+
+What is unstructured data?
+    Unstructured data doesn’t come neatly in rows and columns.
+    Examples:
+        • Text (emails, tweets, documents)
+        • Images (photos, medical scans)
+        • Audio (speech, music)
+        • Video
+        • Raw sensor data
+    Contrast that with structured data:
+        • Tables, spreadsheets, databases
+        • Fixed columns like age, income, clicks, labels
+    Most real-world data (~80%+) is unstructured.
+
+    How deep learning relates to unstructured data
+
+Deep learning is especially good at unstructured data because:
+
+    1. It learns representations automatically
+    Neural networks transform raw inputs into hierarchical representations.
+    Example with images:
+        • Early layers → edges and corners
+        • Middle layers → shapes and textures
+        • Deep layers → objects (faces, cars)
+    You don’t have to tell the model what an “edge” is—it discovers that.
+    2. Different architectures match different data types
+    Deep learning isn’t one thing; it adapts to data structure:
+        • Text → RNNs, Transformers (e.g., BERT, GPT)
+        • Images → CNNs, Vision Transformers
+        • Audio → CNNs + sequence models
+        • Video → 3D CNNs, Transformers
+    These architectures exploit local patterns, sequences, and context—things unstructured data has but tables don’t.
+    3. It scales with data
+    Unstructured data is high-dimensional and messy.
+    Deep models get better as you feed them lots of data + compute, where traditional statistical models often break down.
+
+---------------------------------------------------------------------------------------------------------------------------------
+Neural networks 
+
+    This is a neural network, made of small units called neurons (the circles).
+    A neural network takes raw input, transforms it through hidden layers, and produces an output — learning the transformations automatically.
+
+    Input → Hidden → Hidden → Hidden → … → Output
+
+    They’re organized into layers:
+    1. Input layer (left)
+        • Labeled input
+        • Each circle gets raw numbers from data
+            ○ pixels of an image
+            ○ word embeddings from text
+            ○ audio signal values
+
+    2. Hidden layer(s) (middle)
+        • Labeled hidden
+        • These neurons:
+            ○ combine inputs
+            ○ apply weights
+            ○ pass results forward
+    This is where the network learns patterns.
+
+    3. Output layer (right)
+        • Labeled output
+        • Produces the final answer:
+            ○ class label (cat / dog)
+            ○ probability (spam or not)
+    number (price, temperature, etc.)
+
+💡 Training neural network = Forward Propagation + Backward Propagation
+    Forward Propagation
+        Forward propagation = making a prediction
+        What happens:
+            1. Input data goes into the network
+            2. Each neuron:
+                ○ multiplies inputs by weights
+                ○ adds bias
+                ○ applies an activation function
+            3. The signal moves forward layer by layer
+            4. The output layer produces a prediction
+
+    Backward Propagation
+        Backward propagation = learning from mistakes
+        What happens:
+            1. Compare the prediction with the true answer
+            2. Calculate the error (loss)
+            3. Send this error backward through the network
+        Adjust weights and biases to reduce the error
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Neural network architecture:
+    The most basic neural network architecture is data moves in one direction only:
+        Input → Hidden → Output
+        No loops.
+        No going back during prediction.
+
+    1. Feed-Forward Neural Network (FNN):	
+        • Data moves only forward
+        • No memory
+        • Each input is treated independently
+
+        Example:
+        • Predict house price from features
+        • Classify spam using fixed inputs
+
+        During prediction (inference)
+            • ✅ Only forward propagation
+            Data flows: Input → Hidden → Output
+            • No backward flow
+        This is why it’s called feed-forward.
+
+        During training
+            • ✅ Forward propagation → make a prediction
+            • ✅ Backward propagation → update weights
+        So the full training loop is:
+            1. Forward → compute output
+            2. Compute error (loss)
+            3. Backward → adjust weights
+            4. Repeat
+
+    2. Recurrent Neural Network (RNN):
+        • Data moves forward + loops back
+        • Has memory
+        • Each output depends on current input + past inputs
+
+        Example:
+        • Reading a sentence word by word
+        • Predicting next word
+        • Stock price over time
+        
+        Core idea of RNN (memory)
+            An RNN has a hidden state (memory).
+            At each time step:
+                • it takes the current input
+                • combines it with the previous hidden state
+                • produces:
+                    ○ a new hidden state
+                    ○ an output
+            So it remembers past information.
+
+        How RNN works during training
+
+        Training has two phases.
+        Phase 1: Forward propagation (through time)
+            1️⃣ Feed the sequence step by step
+            2️⃣ RNN makes predictions at each time step
+            3️⃣ Store outputs and hidden states
+            4️⃣ Compute total error (loss)
+            This is called forward pass through time.
+
+        Phase 2: Backward propagation (through time)
+            1️⃣ Error is sent backward from last time step
+            2️⃣ The network figures out:
+                • which weights caused the error
+                • how much each weight contributed
+            3️⃣ Weights are updated to reduce future errors
+            This is called Backpropagation Through Time (BPTT).
+
+    3. CNN (Convolutional Neural Network) is a neural network designed for images and spatial data.
+
+        A CNN:
+            1. Takes an image
+            2. Extracts important visual features (edges, shapes)
+            3. Uses those features to classify the image
+
+    4. Transformers
+        A Transformer is a neural network made to understand sequences (like text), but without using recurrence (no RNN loops).
+        It looks at all parts of the input at once and decides what to pay attention to.
+
+        Why Transformers were needed
+        Problems with RNNs:
+            • Process words one by one → slow
+            • Hard to remember long-range context
+        Transformers fix this by:
+            • Processing everything in parallel
+            • Using attention instead of memory loops
+
+        GPT is built on Transformers 
+        How GPT relates to Transformers
+            • Transformer → the model architecture
+            • GPT → a specific model built using that architecture
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+    What’s the same in FNN and RNN 
+
+        Both FNN and RNN are trained using:
+            Forward pass → compute outputs.
+            Compute loss → measure error.
+            Backward pass → compute gradients.
+            Optimizer step → update weights.
+
+        So yes, the basic training mechanism is the same.
+
+    What’s different in FNN and RNN
+
+        Flow of data:
+            FNN: Each input is independent. No memory. Gradient only flows through layers of that input.
+            RNN: Inputs are sequential. Gradient flows through layers AND through time steps (Backpropagation Through Time, BPTT).
+        Hidden state / memory:
+            FNN: No hidden state carried across inputs.
+            RNN: Hidden state carries memory across sequence steps, and gradients must account for that memory.
+        Dependencies:
+            FNN: Each output depends only on that input.
+            RNN: Each output can depend on all previous inputs in the sequence.
+
+        FNN : 
+        Each input is independent. You feed one data point at a time (or a batch of independent points).
+        The network doesn’t know anything about previous inputs.
+        
+        Input x ──► [Hidden Layer(s)] ──► Output y
+               │
+               ▼
+           Loss computation
+               │
+               ▼
+         Backpropagation
+               │
+               ▼
+        Update weights
+
+        RNN :
+        Input is a sequence of data points.
+        Each step in the sequence is fed one at a time, but the network remembers previous inputs via the hidden state.
+        So the output at step t depends on current input + previous hidden state.
+
+        x1 ─► hidden1 ─► y1
+                │
+        x2 ─► hidden2 ─► y2
+                │
+        x3 ─► hidden3 ─► y3
+                │
+        ...   ...   ...
+        xn ─► hiddenn ─► yn
+
+            ▼
+            Loss computation (sum over all y)
+            │
+            ▼
+        Backpropagation Through Time (BPTT)
+            │
+            ▼
+            Update weights
+
+    

@@ -1,0 +1,54 @@
+🤖 What is AI? 
+    AI is when computers are taught to think a little like humans.
+    They learn from examples and use what they learn to answer questions, recognize things, or make decisions.
+    At a simple level, it’s when computers are designed to do things that usually require human intelligence—like learning, 
+    reasoning, understanding language, recognizing images, or making decisions.
+
+    Examples: 
+    1. Your phone’s face unlock
+        • Humans recognize faces naturally
+        • AI is trained on lots of face images
+        • It learns patterns (eyes, nose, distance between features)
+        • When it sees your face, it says: “This matches what I learned” and unlocks
+    It behaves like a human skill (recognizing a face), but it’s really just doing fast pattern matching—not “knowing” you.
+
+    2. Email spam filter 
+        • The AI looks at thousands of emails
+        • It notices patterns like:
+            ○ “WIN MONEY”
+            ○ lots of links
+            ○ suspicious senders
+        • Emails with those patterns usually turn out to be spam
+        • When a new email arrives, it checks:
+    “Does this match the spam pattern?”
+    If yes → spam folder
+    If no → inbox
+    The AI isn’t reading the email like a human — it’s just spotting familiar patterns and acting on them.
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+What is machine learning ?
+
+AI is the big idea.
+Machine Learning (ML) is one way to do it.
+
+Machine learning is how computers learn from examples instead of being explicitly programmed.
+👉 All ML is AI, but not all AI is ML.
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+What is Deep learning? 
+
+Deep learning is a type of machine learning that uses many layers of artificial neural networks to learn very complex patterns from data.
+A neural network is a way to teach computers by loosely copying how the human brain works.
+A neural network is a system of layered neurons that learns patterns from data by adjusting connections.
+
+How it learns (high level)
+	1. Guess an answer
+	2. Check how wrong it is
+	3. Adjust connections slightly
+	4. Repeat many times
+Over time, guesses get better.
+
+
+AI ---> ML ---> DL ---> Gen AI 

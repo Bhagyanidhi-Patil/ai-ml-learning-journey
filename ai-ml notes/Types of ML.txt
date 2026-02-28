@@ -1,0 +1,150 @@
+ML is process of teaching computers to learn patterns from data and make decisions based on those patterns.
+
+Training
+Training is when the model learns. Teaching computer to learn patterns from data is training. 
+
+Inference
+Inference is when the trained model is used. Make decision based on those patterns are inference. 
+
+------------------------------------------------------------------------------------------------------------------------
+ML example: Bank loan approval system
+    Goal: There is a bank and you have to design a system which decides whether a customer should get a loan or not.  
+    1. Data collection (what the bank gives ML)
+    The bank provides past customer data, for example:
+        • income
+        • age
+        • job type
+        • credit score
+        • existing loans
+        • repayment history (paid on time or defaulted)
+    Each past case is labeled:
+        • Approved & paid back ✅
+        • Approved & defaulted ❌
+
+    2. Learning patterns (training the ML model)
+    The ML model looks at this data and learns patterns like:
+        • People with high credit score + stable income usually repay
+        • People with low credit score + many existing loans often default
+    No one writes rules like
+    “IF credit score < 600 THEN reject”
+    ➡ the model learns this automatically from data.
+
+    3. Decision making (prediction)
+    When a new customer applies:
+        • The system checks their details
+        • Compares them with learned patterns
+        • Outputs a result like:
+            ○ Approve loan
+            ○ Reject loan
+            ○ or Approve with higher interest
+
+    4. Improvement over time
+        • As more people take loans
+        • And repayment results come in
+        • The model is retrained
+    ➡ decisions get better and more accurate
+
+------------------------------------------------------------------------------------------------------------------------
+ML types :
+
+1. Supervised Learning
+    Supervised Learning = learning with answers
+    Data has input + correct output (labels). The model learns by example.
+    Examples:
+        • Loan approval (approve / reject)
+        • Email spam detection
+        • House price prediction
+
+    Type 1: Classification
+        👉 Output is a word / category. Output can be binary (like yes or no) or multi-class also. 
+        You are asking:
+            “Which group does this belong to?”
+        Examples:
+            • Email → Spam or Not Spam
+            • Loan → Yes or No
+            • Photo → Cat or Dog
+        🔑 Output choices are limited and fixed.
+
+    Type 2: Regression
+        👉 Output is a number
+        You are asking:
+            “How much?” or “How many?”
+        Examples:  Swiggy delivery time prediction is a perfect example of supervised learning (regression)
+            • House price → ₹45,00,000
+            • Temperature → 32.5°C
+            • Salary → ₹80,000
+        🔑 Output is a number that can change continuously.
+
+2. Unsupervised Learning
+    Data has only input, no output labels. 
+    In unsupervised learning, input data is given, but it is not labeled or neatly categorized. 
+    The ML algorithm itself finds patterns and separates the data into groups (clusters) and anomaly / outliers (Outliers are data points
+    that are very different from the rest of the data - rare events, errors) .The model finds hidden patterns on its own. 
+    
+    What the model does
+    It tries to find structure on its own, mainly by:
+        • grouping similar things together (clusters)
+        • finding hidden patterns
+
+    Type 1 Clustering:
+        A clustering problem in unsupervised learning is when we want to group similar data points together without having any labels.
+
+        What makes it a “problem”
+            • You have only input data
+            • You don’t know the correct groups
+            • The algorithm must discover the groups by itself
+        Easy example
+        Imagine you have customers with data like:
+            • age
+            • income
+            • shopping behavior
+        No labels like “premium” or “budget”.
+        Clustering will group them into:
+            • similar spending habits
+            • similar age/income patterns
+        Later, humans may name the clusters.
+    
+    Type 2 Associating:
+        The association problem (or association rule learning) in unsupervised learning is about finding relationships between items in data.
+        Association problem = discovering which things often occur together.
+
+        Example
+        Amazon / Blink it suggest items together because association algorithms learn which products are often bought together.
+        So:
+            • Many customers buy milk
+            • A lot of those same customers also buy bread
+            • The system learns this pattern
+            • When you add milk → it suggests bread
+
+        Association learning finds “items that go together” based on past behavior.
+
+3. Reinforcement Learning
+    Reinforcement Learning is learning by trial and error using rewards and penalties. There are no correct answers given upfront.
+    Reinforcement learning teaches an agent to make decisions by rewarding good actions and penalizing bad ones.
+    
+    How it works (step by step)
+        1. Agent takes an action
+        2. Environment responds
+        3. Agent gets a reward (good) or penalty (bad)
+        4. Agent learns which actions give more reward
+    Repeat this many times → behavior improves.
+
+    Simple example (real life)
+        Teaching a dog 🐶:
+            • Sit → treat (reward)
+            • Jump on sofa → no treat (penalty)
+        Over time, the dog learns what to do.
+
+        At first:
+            • Dog tries random actions
+            • Sometimes gets treat, sometimes not
+        After many repeats:
+            • Dog notices:
+        “When I sit, I get food”
+            • So it chooses sitting more often
+        No one tells the dog:
+            • “Sit is correct”
+            • “Jump is wrong”
+        The dog figures it out from rewards.
+
+
