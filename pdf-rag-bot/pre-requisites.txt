@@ -1,0 +1,15 @@
+1. Download and install Ollama model and other imports used in app.py file
+    Then run the below commands,
+    >> ollama pull mistral
+
+    >> ollama --version
+
+    >> ollama pull tinyllama
+
+2. Keep Ollama Running in Background
+    Ollama runs automatically as a local server on:
+    >>  http://localhost:11434
+
+3. To run the code , type below command in the command prompt
+    >> streamlit run streamlit_app.py
+
