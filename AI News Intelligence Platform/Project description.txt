@@ -1,0 +1,35 @@
+AI News Intelligence Platform (RAG + Multi-Source + Insights)
+
+Features:
+
+🔍 Search news by topic (no URL needed)
+📰 Analyze multiple articles
+🧠 Combine them into one summary
+⚖️ Detect bias / different perspectives
+📊 Show trends (what’s happening overall)
+💾 Store news → build your own knowledge base (RAG)
+
+Flow-chart:
+
+User Query (e.g. "AI in India")
+        ↓
+News API (multiple articles)
+        ↓
+Text Extraction
+        ↓
+Vector DB (store embeddings)
+        ↓
+Retriever (top relevant news)
+        ↓
+LLM (via proxy)
+        ↓
+Final Answer (summary + insights)
+
+
+🔧 Tech Stack 
+
+LLM → OpenRouter
+News → NewsAPI
+Vector DB → FAISS (local)
+UI → Streamlit
+
